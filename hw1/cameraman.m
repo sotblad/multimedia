@@ -127,7 +127,7 @@ function convert2uint8 = convert2uint8(blocks)
           case tmp(k) < 0
             tmp(k) = uint8(0);
           case tmp(k) > 255
-            tmp(k) = uint8(255);
+            tmp(k) = uint8(256);
           otherwise
             tmp(k) = uint8(tmp(k));
         endswitch
