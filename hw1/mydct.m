@@ -1,3 +1,5 @@
+% Sotirios Panagiotou, 4456
+
 function mydct = mydct(f)
   % g(x)
   g = g(f);

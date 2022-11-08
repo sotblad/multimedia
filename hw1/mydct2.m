@@ -1,3 +1,5 @@
+% Sotirios Panagiotou, 4456
+
 function mydct2 = mydct2(f)
   mydct2rows = [];
   for i = 1:rows(f)

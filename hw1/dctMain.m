@@ -1,3 +1,5 @@
+% Sotirios Panagiotou, 4456
+
 function dctMain = dctMain()
   pkg load image;
   pkg load signal;
