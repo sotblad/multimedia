@@ -1,4 +1,4 @@
-function mydct1d = mydct1d(f)
+function mydct = mydct(f)
   % g(x)
   g = g(f);
   printf("g(x) =\n");
@@ -7,26 +7,23 @@ function mydct1d = mydct1d(f)
   G = fft(g);
   printf("G(u) =\n");
   G
-  
-  
+
   N = columns(f);
-  mydct1d = zeros(N);
   for u = 1:columns(f)
     u = u-1;
     wa = w(u, N);
-    mydct1d(u+1) = (wa*G(u+1)*(e^((-j*pi*u)/(2*N))))/2;
+    mydct(u+1) = (wa*G(u+1)*(e^((-j*pi*u)/(2*N))))/2;
   endfor
-  F = mydct1d;
+  F = mydct;
   printf("F(u) =\n");
   F
 endfunction
 
 function g = g(f)
   N = size(f)(2);
-  
-  % g(x)
+
   g = [f];
-  for i = N:-1:1
+  for i = N:-1:1 % mirroring gia ton 2o klado
     g = [g f(i)];
   endfor
 endfunction

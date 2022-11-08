@@ -3,8 +3,8 @@ function dctMain = dctMain()
   pkg load signal;
   random8x8 = rand(8);
 
-  printf("mydct2 =\n");
-  mydct2(random8x8)
-  printf("dct2 =\n");
-  dct2(random8x8)
+  mydct2 = real(mydct2(random8x8));
+  mydct2
+  dct2 = dct2(random8x8);
+  dct2
 endfunction

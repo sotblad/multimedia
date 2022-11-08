@@ -1,12 +1,18 @@
-function cameraman = cameraman(n)
+function meros2 = meros2()
   pkg load image
   pkg load signal
-  runCameraman(1);
-  runCameraman(3);
-  runCameraman(5);
+  printf("Running cameraman for Q=1*Q1\n");
+  figure;
+  cameraman(1);
+  printf("~~~~~~~~~~\nRunning cameraman for Q=3*Q1\n");
+  figure;
+  cameraman(3);
+  printf("~~~~~~~~~~\nRunning cameraman for Q=5*Q1\n");
+  figure;
+  cameraman(5);
 endfunction
 
-function runCameraman = runCameraman(n)
+function cameraman = cameraman(n)
   Q = n*[16 11 10 16 24 40 51 61;
        12 12 14 19 26 58 60 55;
        14 13 16 24 40 57 69 56;
@@ -127,7 +133,7 @@ function convert2uint8 = convert2uint8(blocks)
           case tmp(k) < 0
             tmp(k) = uint8(0);
           case tmp(k) > 255
-            tmp(k) = uint8(256);
+            tmp(k) = uint8(255);
           otherwise
             tmp(k) = uint8(tmp(k));
         endswitch
