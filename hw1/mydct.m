@@ -1,15 +1,4 @@
-function mydct = mydct()
-  pkg load image;
-  pkg load signal;
-  random8x8 = rand(8);
-
-  printf("mydct2 =\n");
-  mydct2(random8x8)
-  printf("dct2 =\n");
-  dct2(random8x8)
-endfunction
-
-function mydct1d = mydct1d(f)
+function mydct = mydct(f)
   % g(x)
   g = g(f);
   printf("g(x) =\n");
@@ -19,32 +8,16 @@ function mydct1d = mydct1d(f)
   printf("G(u) =\n");
   G
   
-  
   N = columns(f);
   mydct = zeros(N);
   for u = 1:columns(f)
     u = u-1;
     wa = w(u, N);
-    mydct1d(u+1) = (wa*G(u+1)*(e^((-j*pi*u)/(2*N))))/2;
+    mydct(u+1) = (wa*G(u+1)*(e^((-j*pi*u)/(2*N))))/2;
   endfor
-  F = mydct1d;
+  F = mydct;
   printf("F(u) =\n");
   F
-endfunction
-
-function mydct2 = mydct2(f)
-  mydct2 = [];
-  
-  mydct2rows = [];
-  for i = 1:rows(f)
-    mydct2rows = [mydct2rows; mydct1d(f(i,:))];
-  endfor
-
-  mydct2columns = [];
-  for i = 1:columns(mydct2rows)
-    mydct2columns = [mydct2columns; mydct1d(mydct2rows(:,i)')];
-  endfor
-  mydct2 = mydct2columns';
 endfunction
 
 function mydct = mydctRun(x)
