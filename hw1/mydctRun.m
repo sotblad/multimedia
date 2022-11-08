@@ -1,4 +1,4 @@
-function mydct = mydct()
+function mydctRun = mydctRun()
   pkg load image;
   pkg load signal;
   random8x8 = rand(8);
